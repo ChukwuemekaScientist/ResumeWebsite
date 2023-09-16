@@ -1,15 +1,17 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('subform');
-    const output = document.getElementById('output');
+// Get a reference to the form element
+const form = document.getElementById('myform');
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); 
-        
-        const nameInput = document.getElementById('name');
+// Add a submit event listener to the form
+form.addEventListener('submit', function(event) {
+  // Prevent the default form submission behavior (page refresh)
+  event.preventDefault();
 
-        const name = nameInput.value;
+  // Get the input value
+  const nameInput = document.getElementById('name');
+  const name = nameInput.value;
 
-        // Display the values in the output div
-        output.innerHTML = `<p>Hi ${name}, very nice to meet you.</p>`;
-    });
+  const paragraph = document.getElementById('output');
+
+  paragraph.textContent = `Hi ${name}, very nice to have you here.`;
+
 });
